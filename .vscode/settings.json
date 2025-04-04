@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "Kconfig": "groovy",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "los_printf.h": "c",
+        "platform_core.h": "c",
+        "chip_core_definition.h": "c",
+        "app_init.h": "c",
+        "pinctrl.h": "c",
+        "pin_map.h": "c",
+        "littlefs_adapt.h": "c",
+        "exception.h": "c",
+        "gpio.h": "c",
+        "lfs.h": "c",
+        "soc_osal.h": "c",
+        "watchdog.h": "c",
+        "uart.h": "c",
+        "foc_example.h": "c",
+        "alltypes.h": "c",
+        "*.tcc": "c",
+        "cstring": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

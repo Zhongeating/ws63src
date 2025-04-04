@@ -262,7 +262,7 @@ uintptr_t spi_porting_base_addr_get(spi_bus_t index)
 uint32_t spi_porting_max_slave_select_get(spi_bus_t bus)
 {
     unused(bus);
-    return (uint32_t)SPI_SLAVE1;
+    return (uint32_t)SPI_SLAVE1;        // [BUG] 原来是 SPI_SLAVE0 有误
 }
 
 void spi_porting_set_device_mode(spi_bus_t bus, spi_mode_t mode)

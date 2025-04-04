@@ -406,7 +406,7 @@ void lfs_test(void)
     lfs_debug_print_info("lfs_test read, ret = %d\r\n", ret);
 
     // print the boot count
-    lfs_debug_print_info("===========boot_count: %d=============\r\n", boot_count);
+    printf("===========boot_count: %d=============\r\n", boot_count);
 
     // update boot count
     boot_count = (char)((uint8_t)boot_count + 1);

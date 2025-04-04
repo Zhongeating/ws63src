@@ -1,0 +1,1 @@
+"-IC:/ws63src/drivers/boards/ws63/evb/board_config" "-IC:/ws63src/drivers/boards/ws63/evb/memory_config/include" "-IC:/ws63src/drivers/boards/ws63/evb/memory_config/include/product" "-IC:/ws63src/drivers/chips/ws63/include" "-IC:/ws63src/middleware/utils/common_headers" "-IC:/ws63src/output//acore/" "-IC:/ws63src/output/ws63/acore/ws63-liteos-app"

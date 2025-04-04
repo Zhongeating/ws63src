@@ -39,18 +39,6 @@ if ENABLE_WIFI_SAMPLE
 osource "application/samples/wifi/Kconfig"
 endif
 
-config ENABLE_PRODUCTS_SAMPLE
-    bool
-    prompt "Enable the Sample of products."
-    default n
-    depends on SAMPLE_ENABLE
-    help
-        This option means enable the sample of products.
-
-if ENABLE_PRODUCTS_SAMPLE
-osource "application/samples/products/Kconfig"
-endif
-
 config ENABLE_RADAR_SAMPLE
     bool
     prompt "Enable the Sample of RADAR."
@@ -63,14 +51,26 @@ if ENABLE_RADAR_SAMPLE
 osource "application/samples/radar/Kconfig"
 endif
 
-config ENABLE_NFC_SAMPLE
+config ENABLE_DEMO_SAMPLE
     bool
-    prompt "Enable the Sample of NFC."
+    prompt "Enable the Sample of DEMO."
     default n
     depends on SAMPLE_ENABLE
     help
-        This option means enable the sample of NFC.
+        This option means enable the sample of DEMO.
 
-if ENABLE_NFC_SAMPLE
-osource "application/samples/nfc/Kconfig"
+if ENABLE_DEMO_SAMPLE
+osource "application/samples/demo/Kconfig"
+endif
+
+config ENABLE_MYDEMO_SAMPLE
+    bool
+    prompt "Enable the Sample of MYDEMO."
+    default n
+    depends on SAMPLE_ENABLE
+    help
+        This option means enable the sample of MYDEMO.
+
+if ENABLE_MYDEMO_SAMPLE
+osource "application/samples/mydemo/Kconfig"
 endif

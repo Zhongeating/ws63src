@@ -1,0 +1,26 @@
+#===============================================================================
+# @brief    Kconfig file.
+# Copyright (c) HiSilicon (Shanghai) Technologies Co., Ltd. 2023-2023. All rights reserved.
+#===============================================================================
+config ENABLE_ALL_MYDEMO_SAMPLE
+    bool
+    prompt "Enable all the sample of mydemo, it's just for build."
+    default n
+    depends on ENABLE_MYDEMO_SAMPLE
+    select SAMPLE_SUPPORT_FOC
+    help
+        This option means enable all the sample of demo, it is just for build.
+
+config SAMPLE_SUPPORT_FOC
+    bool
+    prompt "Support FOC Sample."
+    default n
+    depends on ENABLE_MYDEMO_SAMPLE
+    help
+        This option means support FOC Sample.
+
+if SAMPLE_SUPPORT_FOC
+menu "FOC Sample Configuration"
+    osource "application/samples/mydemo/foc/Kconfig"
+endmenu
+endif

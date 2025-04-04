@@ -1,0 +1,26 @@
+#===============================================================================
+# @brief    Kconfig file.
+# Copyright (c) HiSilicon (Shanghai) Technologies Co., Ltd. 2023-2023. All rights reserved.
+#===============================================================================
+config ENABLE_ALL_DEMO_SAMPLE
+    bool
+    prompt "Enable all the sample of demo, it's just for build."
+    default n
+    depends on ENABLE_DEMO_SAMPLE
+    select SAMPLE_SUPPORT_LED
+    help
+        This option means enable all the sample of demo, it is just for build.
+
+config SAMPLE_SUPPORT_LED
+    bool
+    prompt "Support LED Sample."
+    default n
+    depends on ENABLE_DEMO_SAMPLE
+    help
+        This option means support LED Sample.
+
+if SAMPLE_SUPPORT_LED
+menu "LED Sample Configuration"
+    osource "application/samples/demo/led/Kconfig"
+endmenu
+endif

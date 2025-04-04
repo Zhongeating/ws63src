@@ -1,0 +1,168 @@
+#ifndef PIN_MAP_H
+#define PIN_MAP_H
+
+/**
+ * @brief  引脚功能复用映射
+ */
+typedef enum {
+    PIN_FUNC_IO_00_GPIO_00,
+    PIN_FUNC_IO_00_PWM_0,
+    PIN_FUNC_IO_00_DIAG_0,
+    PIN_FUNC_IO_00_SPI1_CSN,
+    PIN_FUNC_IO_00_JTAG_TDI,
+} pin_func_io_00;
+
+typedef enum {
+    PIN_FUNC_IO_01_GPIO_01,
+    PIN_FUNC_IO_01_PWM_1,
+    PIN_FUNC_IO_01_DIAG_1,
+    PIN_FUNC_IO_01_SPI1_IO0,
+    PIN_FUNC_IO_01_JTAG_MODE,
+    PIN_FUNC_IO_01_BT_SAMPLE,
+} pin_func_io_01;
+
+typedef enum {
+    PIN_FUNC_IO_02_GPIO_02,
+    PIN_FUNC_IO_02_PWM_2,
+    PIN_FUNC_IO_02_DIAG_2,
+    PIN_FUNC_IO_02_SPI1_IO3,
+    PIN_FUNC_IO_02_WIFI_TSF_SYNC,
+    PIN_FUNC_IO_02_WL_GLP_SYNC_PULSE,
+    PIN_FUNC_IO_02_BGLE_GLP_SYNC_PULSE,
+} pin_func_io_02;
+
+typedef enum {
+    PIN_FUNC_IO_03_GPIO_03,
+    PIN_FUNC_IO_03_PWM_3,
+    PIN_FUNC_IO_03_PMU_32K_TEST,
+    PIN_FUNC_IO_03_SPI1_IO1,
+    PIN_FUNC_IO_03_HW_ID_0,
+    PIN_FUNC_IO_03_DIAG_3,
+} pin_func_io_03;
+
+typedef enum {
+    PIN_FUNC_IO_04_SSI_CLK,
+    PIN_FUNC_IO_04_PWM_4,
+    PIN_FUNC_IO_04_GPIO_04,
+    PIN_FUNC_IO_04_SPI1_IO1,
+    PIN_FUNC_IO_04_JTAG_ENABLE,
+    PIN_FUNC_IO_04_DFT_JTAG_TMS,
+} pin_func_io_04;
+
+typedef enum {
+    PIN_FUNC_IO_05_SSI_DATA,
+    PIN_FUNC_IO_05_PWM_5,
+    PIN_FUNC_IO_05_UART2_CTS,
+    PIN_FUNC_IO_05_SPI1_IO2,
+    PIN_FUNC_IO_05_GPIO_05,
+    PIN_FUNC_IO_05_SPI0_IN,
+    PIN_FUNC_IO_05_DFT_JTAG_TCK,
+} pin_func_io_05;
+
+typedef enum {
+    PIN_FUNC_IO_06_GPIO_06,
+    PIN_FUNC_IO_06_PWM_6,
+    PIN_FUNC_IO_06_UART2_RTS,
+    PIN_FUNC_IO_06_SPI1_SCK,
+    PIN_FUNC_IO_06_REFCLK_FREQ_STATUS,
+    PIN_FUNC_IO_06_DIAG_4,
+    PIN_FUNC_IO_06_SPIO0_OUT,
+    PIN_FUNC_IO_06_DFT_JTAG_TDI,
+} pin_func_io_06;
+
+typedef enum {
+    PIN_FUNC_IO_07_GPIO_07,
+    PIN_FUNC_IO_07_PWM_7,
+    PIN_FUNC_IO_07_UART2_RXD,
+    PIN_FUNC_IO_07_SPI0_SCK,
+    PIN_FUNC_IO_07_I2S_MCLK,
+    PIN_FUNC_IO_07_DIAG_5,
+} pin_func_io_07;
+
+typedef enum {
+    PIN_FUNC_IO_08_GPIO_08,
+    PIN_FUNC_IO_08_PWM_0,
+    PIN_FUNC_IO_08_UART2_TXD,
+    PIN_FUNC_IO_08_SPI0_CS1_N,
+    PIN_FUNC_IO_08_DIAG_6,
+} pin_func_io_08;
+
+typedef enum {
+    PIN_FUNC_IO_09_GPIO_09,
+    PIN_FUNC_IO_09_PWM_1,
+    PIN_FUNC_IO_09_RADAR_ANT0_SW,
+    PIN_FUNC_IO_09_SPI0_OUT,
+    PIN_FUNC_IO_09_I2S_DO,
+    PIN_FUNC_IO_09_HW_ID_1,
+    PIN_FUNC_IO_09_DIAG_7,
+    PIN_FUNC_IO_09_JTAG_TD0,
+} pin_func_io_09;
+
+typedef enum {
+    PIN_FUNC_IO_10_GPIO_10,
+    PIN_FUNC_IO_10_PWM_2,
+    PIN_FUNC_IO_10_ANT0_SW,
+    PIN_FUNC_IO_10_SPI0_CS0_N,
+    PIN_FUNC_IO_10_I2S_SCLK,
+    PIN_FUNC_IO_10_DIAG_0,
+} pin_func_io_10;
+
+typedef enum {
+    PIN_FUNC_IO_11_GPIO_11,
+    PIN_FUNC_IO_11_PWM_3,
+    PIN_FUNC_IO_11_RADAR_ANT1_SW,
+    PIN_FUNC_IO_11_SPI0_IN,
+    PIN_FUNC_IO_11_I2S_LRCLK,
+    PIN_FUNC_IO_11_DIAG_1,
+    PIN_FUNC_IO_11_HW_ID_2,
+} pin_func_io_11;
+
+typedef enum {
+    PIN_FUNC_IO_12_GPIO_12,
+    PIN_FUNC_IO_12_PWM_4,
+    PIN_FUNC_IO_12_ANT1_SW,
+    PIN_FUNC_IO_12_I2S_DI = 4,
+    PIN_FUNC_IO_12_HW_ID_3 = 6,
+} pin_func_io_12;
+
+typedef enum {
+    PIN_FUNC_IO_13_GPIO_13,
+    PIN_FUNC_IO_13_UART1_CTS,
+    PIN_FUNC_IO_13_RADAR_ANT0_SW,
+    PIN_FUNC_IO_13_DFT_JTAG_TD0,
+    PIN_FUNC_IO_13_JTAG_TMS,
+} pin_func_io_13;
+
+typedef enum {
+    PIN_FUNC_IO_14_GPIO_14,
+    PIN_FUNC_IO_14_UART1_RTS,
+    PIN_FUNC_IO_14_RADAR_ANT1_SW,
+    PIN_FUNC_IO_14_DFT_JTAG_TRSTN,
+    PIN_FUNC_IO_14_JTAG_TCK,
+} pin_func_io_14;
+
+typedef enum {
+    PIN_FUNC_IO_15_GPIO_15,
+    PIN_FUNC_IO_15_UART1_TXD,
+    PIN_FUNC_IO_15_I2C1_SDA,
+} pin_func_TX_1;
+
+typedef enum {
+    PIN_FUNC_IO_16_GPIO_16,
+    PIN_FUNC_IO_16_UART1_RXD,
+    PIN_FUNC_IO_16_I2C1_SCL,
+} pin_func_RX_1;
+
+typedef enum {
+    PIN_FUNC_IO_17_GPIO_17,
+    PIN_FUNC_IO_17_UART0_TXD,
+    PIN_FUNC_IO_17_I2C0_SDA,
+} pin_func_TX_0;
+
+typedef enum {
+    PIN_FUNC_IO_18_GPIO_18,
+    PIN_FUNC_IO_18_UART0_RXD,
+    PIN_FUNC_IO_18_I2C0_SCL,
+} pin_func_RX_0;
+
+#endif 

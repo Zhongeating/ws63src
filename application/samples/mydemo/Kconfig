@@ -8,6 +8,7 @@ config ENABLE_ALL_MYDEMO_SAMPLE
     default n
     depends on ENABLE_MYDEMO_SAMPLE
     select SAMPLE_SUPPORT_FOC
+    select SAMPLE_SUPPORT_LFS
     help
         This option means enable all the sample of demo, it is just for build.
 
@@ -22,5 +23,19 @@ config SAMPLE_SUPPORT_FOC
 if SAMPLE_SUPPORT_FOC
 menu "FOC Sample Configuration"
     osource "application/samples/mydemo/foc/Kconfig"
+endmenu
+endif
+
+config SAMPLE_SUPPORT_LFS
+    bool
+    prompt "Support LFS Sample."
+    default n
+    depends on ENABLE_MYDEMO_SAMPLE
+    help
+        This option means support LFS Sample.
+
+if SAMPLE_SUPPORT_FOC
+menu "LFS Sample Configuration"
+    osource "application/samples/mydemo/lfs/Kconfig"
 endmenu
 endif

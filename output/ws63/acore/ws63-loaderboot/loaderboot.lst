@@ -19490,7 +19490,7 @@ c:\ws63src\open_source\libboundscheck\src/output.inl:514
   a25bcc:	40f80833          	sub	a6,a6,a5
   a25bd0:	d042                	sw	a6,32(sp)
   a25bd2:	bdc5                	j	a25ac2 <SecOutput+0x5ae>
-SecNumber32ToString():
+SecNumber32ToDecStringFast():
 c:\ws63src\open_source\libboundscheck\src/output.inl:267
     } while (val32 != 0);
   a25bd4:	f7dd                	bnez	a5,a25b82 <SecOutput+0x66e>

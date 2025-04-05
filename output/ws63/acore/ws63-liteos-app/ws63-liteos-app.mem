@@ -24,7 +24,7 @@
     .btc_bss_tcm      0x00183620                    28                  
     .wifi_bss_tcm     0x00183640                   956                  
   
-  SRAM                0x00A00000     0x85F00   0x2C970 = 182640
+  SRAM                0x00A00000     0x85F00   0x2C980 = 182656
     .wifi_pkt_ram     0x00A00000                 49152                  
     .plat_text_sram   0x00A0C000                 10884 load address 0x234C40
     .wifi_text_sram   0x00A0EA88                     0                  
@@ -34,19 +34,19 @@
     .wifi_data_sram   0x00A0F460                     0                  
     .btc_data_sram    0x00A0F460                     0                  
     .bth_data_sram    0x00A0F460                     0                  
-    .btc_data_flash   0x00A0F460                  4928 load address 0x365FB0
-    .bth_data_flash   0x00A107A0                  2365 load address 0x3672F0
-    .data             0x00A110E0                   604 load address 0x367C30
-    .plat_bss_sram    0x00A11340                  1217                  
-    .plat_bss_flash   0x00A11808                 12772                  
-    .wifi_bss_flash   0x00A149F0                 37504                  
-    .radar_bss_flash  0x00A1DC70                 39292                  
-    .radar_ai_bss_flash  0x00A275F0                  6120                  
-    .btc_bss_flash    0x00A28DD8                  3260                  
-    .bth_bss_flash    0x00A29A98                  2989                  
-    .bss              0x00A2A648                  3876                  
-    .stacks           0x00A2B570                  5120                  
-    .heap             0x00A2C970                     0                  
+    .btc_data_flash   0x00A0F460                  4928 load address 0x3664C0
+    .bth_data_flash   0x00A107A0                  2412 load address 0x367800
+    .data             0x00A11110                   604 load address 0x368170
+    .plat_bss_sram    0x00A11370                  1217                  
+    .plat_bss_flash   0x00A11838                 12772                  
+    .wifi_bss_flash   0x00A14A20                 37504                  
+    .radar_bss_flash  0x00A1DCA0                 39292                  
+    .radar_ai_bss_flash  0x00A27620                  6120                  
+    .btc_bss_flash    0x00A28E08                  3260                  
+    .bth_bss_flash    0x00A29AC8                  2957                  
+    .bss              0x00A2A658                  3876                  
+    .stacks           0x00A2B580                  5120                  
+    .heap             0x00A2C980                     0                  
   
   PRESERVE_SHARE_MEM  0x00A85F00       0x100      0xFC = 252
     .preserve         0x00A85F00                   252                  
@@ -55,7 +55,7 @@
     startup           0x00230300                   424                  
     .sysintcall.init  0x002304A8                    52                  
   
-  PROGRAM             0x00230700    0x23F900  0x13778C = 1275788
+  PROGRAM             0x00230700    0x23F900  0x137CCC = 1277132
     .patch            0x00230700                  2344                  
     .rom_ram_cb_text  0x00231028                  1816                  
     .plat_romdata     0x00231740                   212                  
@@ -68,16 +68,16 @@
     .plat_text_sram   0x00234C40                 10884                  
     .patch_on_sram    0x002376C8                  2520                  
     .plat_text_flash  0x002380A0                178332                  
-    .wifi_text_flash  0x00263940                585990                  
-    .patch_on_flash   0x002F2A48                  1908                  
-    .btc_text_flash   0x002F31C0                132152                  
-    .bth_text_flash   0x003135F8                230590                  
-    .radar_text_flash  0x0034BAB8                 34036                  
-    .radar_ai_text_flash  0x00353FB0                  9980                  
-    .text             0x003566B0                 63740                  
-    .btc_data_flash   0x00365FB0                  4928                  
-    .bth_data_flash   0x003672F0                  2365                  
-    .data             0x00367C30                   604                  
+    .wifi_text_flash  0x00263940                586250                  
+    .patch_on_flash   0x002F2B50                  1908                  
+    .btc_text_flash   0x002F32C8                132152                  
+    .bth_text_flash   0x00313700                231618                  
+    .radar_text_flash  0x0034BFC8                 34036                  
+    .radar_ai_text_flash  0x003544C0                  9980                  
+    .text             0x00356BC0                 63740                  
+    .btc_data_flash   0x003664C0                  4928                  
+    .bth_data_flash   0x00367800                  2412                  
+    .data             0x00368170                   604                  
 
   ====================================================
 
@@ -474,7 +474,7 @@
   --------------------------------  --------  -----
 
 
-  .wifi_text_flash                    281896
+  .wifi_text_flash                    282074
 
     c:                                  5922
       ws63src                               
@@ -550,7 +550,7 @@
                     romable                 
                       mac_frame_common_rom.h        50
 
-    C:                                275974
+    C:                                276152
       ws63src                               
         open_source                   203125
           wpa_supplicant              113597
@@ -720,8 +720,8 @@
                   arch                      
                     sys_arch                      1128
 
-        middleware                     42346
-          services                     28772
+        middleware                     42524
+          services                     28950
             wifi_service                    
               wpa                      18448
                 liteos_wpa_api          8098
@@ -746,8 +746,8 @@
                   hostapd_main_rtos               1332
                   hostapd_ctrl_iface_rtos          112
 
-              service                   8880
-                soc_wifi_service_api              8880
+              service                   9058
+                soc_wifi_service_api              9058
 
           utils                        13574
             at                              
@@ -855,11 +855,11 @@
 
           wpa_supplicant                 233
             src                          172
-              eap_server                   4
-                eap_server_methods                   4
-
               eap_peer                     4
                 eap_methods                          4
+
+              eap_server                   4
+                eap_server_methods                   4
 
               crypto                     160
                 random                             160
@@ -1281,7 +1281,7 @@
   --------------------------------  --------  -----
 
 
-  .bth_text_flash                        312
+  .bth_text_flash                        892
 
     C:                                      
       ws63src                               
@@ -1289,7 +1289,10 @@
           samples                           
             mydemo                          
               foc                           
-                foc_example                        312
+                wifi                     706
+                  wifi_connect                     706
+
+                foc_example                        186
 
 
   Section                            Total     Size
@@ -1329,8 +1332,8 @@
 
                 drv_cipher              1322
                   drv_code              1258
-                    drv_symc                       556
                     drv_hash                       665
+                    drv_symc                       556
                     crypto_drv_common               36
                     drv_trng                         1
 
@@ -1623,7 +1626,7 @@
   --------------------------------  --------  -----
 
 
-  .bth_bss_flash                          65
+  .bth_bss_flash                          33
 
     C:                                      
       ws63src                               
@@ -1631,7 +1634,9 @@
           samples                           
             mydemo                          
               foc                           
-                foc_example                         65
+                foc_example                         32
+                wifi                       1
+                  wifi_connect                       1
 
 
   Section                            Total     Size
@@ -1654,7 +1659,7 @@
   --------------------------------  --------  -----
 
 
-  .bth_data_flash                          1
+  .bth_data_flash                         48
 
     C:                                      
       ws63src                               
@@ -1662,7 +1667,8 @@
           samples                           
             mydemo                          
               foc                           
-                foc_example                          1
+                wifi                        
+                  wifi_connect                      48
 
   ====================================================
 

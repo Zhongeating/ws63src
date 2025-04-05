@@ -20,7 +20,11 @@
         "foc_example.h": "c",
         "alltypes.h": "c",
         "*.tcc": "c",
-        "cstring": "c"
+        "cstring": "c",
+        "common_def.h": "c",
+        "wifi_hotspot.h": "c",
+        "wifi_connect.h": "c",
+        "cjson_demo.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

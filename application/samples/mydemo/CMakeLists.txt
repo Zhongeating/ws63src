@@ -6,4 +6,8 @@ if(DEFINED CONFIG_SAMPLE_SUPPORT_FOC)
     add_subdirectory_if_exist(foc)
 endif()
 
+if(DEFINED CONFIG_SAMPLE_SUPPORT_LFS)
+    add_subdirectory_if_exist(lfs)
+endif()
+
 set(SOURCES "${SOURCES}" PARENT_SCOPE)

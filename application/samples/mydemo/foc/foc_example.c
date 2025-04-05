@@ -57,32 +57,73 @@ static int foc_task(void)
     pin_init();
     config_init();
 
+
+    uint8_t fls_state = 0;
     while (1) {
         uapi_watchdog_kick();
-        if (strncmp(g_uart_rx_buff, "lfs", 3) == 0) {
-            state = 1;
+        if (state_flag == 1) {
+            switch (state)
+            {
+            case 0:
+                if (strncmp(g_uart_rx_buff, "lfs", 3) == 0) {
+                    state = 1;
+                }
+                break;
+            case 1:
+                switch (fls_state)
+                {
+                case 0:
+                    if (strncmp(g_uart_rx_buff, "read", 4) == 0) {
+                        state = 1;
+                    }
+                    if (strncmp(g_uart_rx_buff, "write", 5) == 0) {
+                        state = 2;
+                    }
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+                }
+                break;
+            }
+            state_flag = 2;
         }
-        switch (state)
-        {
-        case 0:
-            if (state_flag == 1) {
+        if (state_flag == 2) {
+            switch (state)
+            {
+            case 0:
                 printf("[OPT] You can input CMD:\r\n");
-                state_flag = 0;
+                break;
+            case 1:
+                switch (fls_state)
+                {
+                case 0:
+                    printf("[FLS] opt: [ read / write ]\r\n");
+                    break;
+                case 1:
+                    printf("[FLS] file name:\r\n");
+                    break;
+                case 2:
+                    printf("[FLS] file name:\r\n");
+                    break;
+                case 3:
+                    printf("[FLS] new context:\r\n");
+                    break;
+                default:
+                    break;
+                }
+                break;
             }
-            break;
-        case 1:
-            if (state_flag == 1) {
-                printf("[FLS] You can input FileName:\r\n");
-                state_flag = 0;
-            }
-            break;
+            state_flag = 0;
         }
-        if (state != 0) {
-            uapi_gpio_set_val(LED_PIN, GPIO_LEVEL_HIGH);
-            uapi_tcxo_delay_ms(500);
-            uapi_gpio_set_val(LED_PIN, GPIO_LEVEL_LOW);
-            state = 0;
-        }
+        // uapi_gpio_set_val(LED_PIN, GPIO_LEVEL_HIGH);
+        // uapi_tcxo_delay_ms(500);
+        // uapi_gpio_set_val(LED_PIN, GPIO_LEVEL_LOW);
     }
 
     return 0;
